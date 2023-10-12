@@ -44,6 +44,12 @@ header .navigation a{
 header .navigation a:hover{
     color: crimson;
 }
+.menu-btn{
+    display: none;
+}
+.menu-btn2{
+    display: none;
+}
 @media (max-width: 1049px){
     header{
         padding: 12px 20px;
@@ -52,8 +58,8 @@ header .navigation a:hover{
         display: none;
     }
     .menu-btn{
+        display: block;
         position: absolute;
-        background: url(./images/menu3.png) no-repeat   ;
         background-size: 30px;
         background-position: center; 
         width: 40px;
@@ -64,9 +70,30 @@ header .navigation a:hover{
         font-size: 27px;
     }
     .menu-btn.active{
+        display: none;
         z-index: 999;
-        
-        background: url(./images/lo.png) no-repeat;
+        background-size: 25px;
+        background-position: center;
+        transition: .4s ease;
+        filter: invert(1);
+    }
+    .menu-btn2{
+        display: block;
+        position: absolute;
+        background-size: 30px;
+        background-position: center; 
+        width: 40px;
+        height: 40px;
+        right: 10px;
+        margin: 0 20px;
+        cursor: pointer;
+        font-size: 27px;
+        top: 20px;
+        color: white;
+    }
+    .menu-btn2.active{
+        display: block;
+        z-index: 999;
         background-size: 25px;
         background-position: center;
         transition: .4s ease;
@@ -74,15 +101,13 @@ header .navigation a:hover{
     }
     header .navigation.active{
         position: fixed;
-
         z-index: 888;
         background-color: rgba(0, 0, 0, 0.648);
         -webkit-backdrop-filter: blur(7px);
             backdrop-filter: blur(7px);
-          
         top: 0;
         right: 0;
-        width: 380px;
+        width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
@@ -155,6 +180,10 @@ header .navigation a:hover{
     .section-title{
         font-size: 38px;
     }
+    .skills{
+        margin: 0;
+        padding: 0;
+    }
     .skills .content{
         flex-direction: column;
     }
@@ -162,19 +191,36 @@ header .navigation a:hover{
         position: relative;
         width: 100%;
     }
+    .skills p{
+        margin-left: 10px;
+    }
+    .about {
+        margin: 0;
+        padding: 0;
+    }
     .about .content2{
-        flex-direction: column;
-    }
-    .about .content2 .column{
-        position: relative;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
     }
-    
+
     .rasm img{
         display: none;
     }
     
-    
+    .services{
+        margin: 0;
+        padding: 0;
+    }
+    .work{
+        margin: 0;
+        padding: 0;
+    }
+    .contact{
+        margin: 0;
+        padding: 0;
+    }
 }
 
 section{
@@ -283,7 +329,7 @@ section{
 
 .section-title{
     position: relative;
-    color: blueviolet;
+    color: crimson;
     font-size: 38px;
     font-weight: 800;
     margin-bottom: 60px;
@@ -295,7 +341,7 @@ section{
     left: 50%;
     width: 140px;
     height: 4px;
-    background-color: blue;
+    background-color: crimson;
     transform: translateX(-50%);
 }
 .section-title::after{
@@ -306,16 +352,15 @@ section{
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: blue;
+    background-color: crimson;
     transform: translateX(-50%);
+    transition: 1s ease;
 }
-
+.section-title:hover::after{
+    left: 90%;
+}
 .about{
-    background: rgba(156, 151, 151, 0.406);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-
+    background: white;
 }
 .about .content2{
     position: relative;
@@ -480,7 +525,7 @@ img{
     transform: translateY(-30px);
 }
 .services .card .service-icon{
-    color: blueviolet;
+    color: crimson;
     font-size: 120px;
     text-align: center;
     transition:  1s ease;
