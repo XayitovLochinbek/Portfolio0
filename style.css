@@ -1,25 +1,26 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 
 }
 
-header{
+header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    background-color: rgba(255, 255, 255, 0.498);    
+    background-color: rgb(27, 23, 23);
     border: none;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 999;
     transition: 1 ease;
+    box-shadow: 0 0 150px blue;
 }
 
-header .brand{
+header .brand {
     color: rgb(0, 219, 15);
     font-size: 32px;
     font-weight: 700;
@@ -27,61 +28,73 @@ header .brand{
     text-shadow: 0 0 10px rgb(0, 219, 15);
     transition: 1.7s ease;
 }
-header .brand:hover{
+
+header .brand:hover {
     color: crimson;
     text-shadow: 0 0 10px rgb(255, 0, 123);
 }
-header .navigation{
+
+header .navigation {
     position: relative;
 }
-header .navigation a{
+
+header .navigation a {
     font-size: 17px;
     font-weight: 500px;
     text-decoration: none;
     margin-left: 30px;
     transition: .5s ease;
 }
-header .navigation a:hover{
+
+header .navigation a:hover {
     color: crimson;
 }
-.menu-btn{
+
+.menu-btn {
     display: none;
 }
-.menu-btn2{
+
+.menu-btn2 {
     display: none;
 }
-@media (max-width: 1049px){
-    header{
+
+@media (max-width: 1049px) {
+    header {
         padding: 12px 20px;
     }
-    header .navigation{
+
+    header .navigation {
         display: none;
     }
-    .menu-btn{
+
+    .menu-btn {
         display: block;
         position: absolute;
         background-size: 30px;
-        background-position: center; 
+        background-position: center;
         width: 40px;
         height: 40px;
         right: 0;
         margin: 0 20px;
         cursor: pointer;
         font-size: 27px;
+        color: yellow;
     }
-    .menu-btn.active{
+
+    .menu-btn.active {
         display: none;
         z-index: 999;
         background-size: 25px;
         background-position: center;
-        transition: .4s ease;
+        transition: all 1s ease;
         filter: invert(1);
     }
-    .menu-btn2{
+
+    .menu-btn2 {
         display: block;
         position: absolute;
         background-size: 30px;
-        background-position: center; 
+        background-position: center;
         width: 40px;
         height: 40px;
         right: 10px;
@@ -89,9 +102,12 @@ header .navigation a:hover{
         cursor: pointer;
         font-size: 27px;
         top: 20px;
-        color: white;
+        color: red;
+        font-size: 40px;
+        transform: rotate(360deg);
     }
-    .menu-btn2.active{
+
+    .menu-btn2.active {
         display: block;
         z-index: 999;
         background-size: 25px;
@@ -99,12 +115,13 @@ header .navigation a:hover{
         transition: .4s ease;
         filter: invert(1);
     }
-    header .navigation.active{
+
+    header .navigation.active {
         position: fixed;
         z-index: 888;
         background-color: rgba(0, 0, 0, 0.648);
-        -webkit-backdrop-filter: blur(7px);
-            backdrop-filter: blur(7px);
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
         top: 0;
         right: 0;
         width: 100%;
@@ -114,14 +131,15 @@ header .navigation a:hover{
         align-items: center;
         flex-direction: column;
         box-shadow: 3px 3px 3px blue;
-        transition: 2.5s ease;
     }
-    header .navigation.active:hover{
+
+    header .navigation.active:hover {
         width: 100%;
     }
-    header .navigation a{
+
+    header .navigation a {
         background-color: transparent;
-        border: 3px solid ;
+        border: 3px solid;
         border-radius: 100px;
         font-size: 1.2rem;
         font-weight: 600;
@@ -136,26 +154,27 @@ header .navigation a:hover{
         text-align: center;
 
     }
-    header .navigation a { 
+
+    header .navigation a {
         color: #ff0000;
-      }
-      
-      header .navigation a::before { 
+        box-shadow: 0 0 10px red;
+    }
+
+    header .navigation a::before {
         background-color: #ff1616;
-        
-    
-      }
-      
-      header .navigation a:hover { 
+    }
+
+    header .navigation a:hover {
         color: white;
         border: none;
-      }
-      
-      header .navigation a:hover::before { 
+        box-shadow: 0 0 30px red;
+    }
+
+    header .navigation a:hover::before {
         transform: scaleY(1);
-    
-      }
-    header .navigation a::before { 
+    }
+
+    header .navigation a::before {
         content: "";
         height: 100%;
         left: 0;
@@ -166,67 +185,84 @@ header .navigation a:hover{
         width: 100%;
         z-index: -1;
         border-radius: 100px;
-      }
-    
-    section{
+    }
+
+    section {
         padding: 80px 20px;
     }
-    .main .content h2{
+
+    .main .content h2 {
         font-size: 25px;
     }
-    .main .content h3{
+
+    .main .content h3 {
         font-size: 35px;
     }
-    .section-title{
+
+    .section-title {
         font-size: 38px;
     }
-    .skills{
+
+    .skills {
         margin: 0;
         padding: 0;
     }
-    .skills .content{
+
+    .skills .content {
         flex-direction: column;
     }
-    .skills .content .column{
+
+    .skills .content .column {
         position: relative;
         width: 100%;
     }
-    .skills p{
+
+    .skills p {
         margin-left: 10px;
     }
+
     .about {
         margin: 0;
         padding: 0;
     }
-    .about .content2{
+
+    .about .content2 {
         width: 100%;
         display: flex;
         flex-direction: column;
         margin: 0;
     }
 
-    .rasm img{
+    .rasm img {
         display: none;
     }
-    
-    .services{
+
+    .services {
+        margin: 0;
+        padding: 0;
+        
+    }
+    .services .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .work {
         margin: 0;
         padding: 0;
     }
-    .work{
-        margin: 0;
-        padding: 0;
-    }
-    .contact{
+
+    .contact {
         margin: 0;
         padding: 0;
     }
 }
 
-section{
+section {
     padding: 100px;
 }
-.main{
+
+.main {
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -238,31 +274,35 @@ section{
     background-attachment: fixed;
 
 }
-.main .content h2{
+
+.main .content h2 {
     color: green;
     font-size: 36px;
     font-weight: 500;
     transition: .7s ease;
 
 }
-.main .content h2:hover{
+
+.main .content h2:hover {
     color: rgb(23, 0, 128);
     font-size: 46px;
     font-weight: 500;
 
 }
-.main .content h2 span{
+
+.main .content h2 span {
     font-size: 46px;
     font-weight: 400;
 }
 
-.animated-text{
+.animated-text {
     height: 80px;
     overflow: hidden;
     position: relative;
-    
+
 }
-.animated-text h3{
+
+.animated-text h3 {
     color: crimson;
     font-size: 52px;
     font-weight: 700;
@@ -270,36 +310,43 @@ section{
     letter-spacing: 1px;
     transition: .7s ease;
 }
-.animated-text h3:hover{
+
+.animated-text h3:hover {
     color: blue;
     font-size: 62px;
     font-weight: 700;
     line-height: 70px;
     letter-spacing: 1px;
 }
-.animated-text h3:nth-child(1){
-    animation: text-move 10s infinite 
+
+.animated-text h3:nth-child(1) {
+    animation: text-move 10s infinite
 }
 
-@keyframes text-move{
-    0%{
+@keyframes text-move {
+    0% {
         margin-top: 0;
     }
-    25%{
+
+    25% {
         margin-top: -80px;
     }
-    50%{
+
+    50% {
         margin-top: -160px;
     }
-    75%{
+
+    75% {
         margin-top: -70px;
     }
-    0%{
-        margin-top: 0  ;
+
+    0% {
+        margin-top: 0;
     }
 }
-.btn{
-    
+
+.btn {
+
     font-size: 17px;
     display: inline-block;
     font-weight: 600;
@@ -307,18 +354,19 @@ section{
     text-decoration: none;
     border-radius: 5px;
     letter-spacing: 1px;
-    margin: 30px ;
+    margin: 30px;
     transition: .5s ease;
 
 }
 
 
-.media-icons a{
-    color: rgb(0, 116, 231);
-    font-size: 25px ;
+.media-icons a {
+    color:red;
+    font-size: 25px;
     margin-right: 30px;
 }
-.title{
+
+.title {
     width: 100%;
     display: flex;
     align-items: center;
@@ -327,14 +375,15 @@ section{
 }
 
 
-.section-title{
+.section-title {
     position: relative;
     color: crimson;
     font-size: 38px;
     font-weight: 800;
     margin-bottom: 60px;
 }
-.section-title::before{
+
+.section-title::before {
     content: '';
     position: absolute;
     top: 56px;
@@ -344,7 +393,8 @@ section{
     background-color: crimson;
     transform: translateX(-50%);
 }
-.section-title::after{
+
+.section-title::after {
     content: '';
     position: absolute;
     top: 50px;
@@ -356,13 +406,16 @@ section{
     transform: translateX(-50%);
     transition: 1s ease;
 }
-.section-title:hover::after{
+
+.section-title:hover::after {
     left: 90%;
 }
-.about{
+
+.about {
     background: white;
 }
-.about .content2{
+
+.about .content2 {
     position: relative;
     width: 100%;
     display: flex;
@@ -371,25 +424,29 @@ section{
     margin-top: 20px;
     padding: 10px;
 }
-img{
+
+img {
     border-radius: 10px;
 }
-.about .content2 .col-left{
+
+.about .content2 .col-left {
     position: relative;
     width: 45px;
 }
 
-.column-col-straight-reveal{
+.column-col-straight-reveal {
     margin-left: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.column-col-straight-reveal p{
+
+.column-col-straight-reveal p {
     font-size: 20px;
 }
-.about .content2 .img-card{
+
+.about .content2 .img-card {
     position: relative;
     width: 100%;
     height: 460px;
@@ -397,7 +454,7 @@ img{
     overflow: hidden;
 }
 
-.about .content2 .img-card img{
+.about .content2 .img-card img {
     position: absolute;
     top: 0;
     left: 0;
@@ -407,21 +464,25 @@ img{
     border-radius: 10px;
     transition: 2s ease;
 }
-.about .content2 .img-card img:hover{
+
+.about .content2 .img-card img:hover {
     transform: scale(1.2);
 }
-.about .content{
+
+.about .content {
     font-size: 26px;
     font-weight: 800;
-    margin-bottom: 20px;    
+    margin-bottom: 20px;
 }
-.skills{
+
+.skills {
     background: black;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
-.skills .content{
+
+.skills .content {
     position: relative;
     width: 100%;
     display: flex;
@@ -430,33 +491,38 @@ img{
     margin-top: 20px;
 }
 
-.skills .col-left{
+.skills .col-left {
     position: relative;
     width: 45%;
 }
 
-.skills .col-left .content-title{
+.skills .col-left .content-title {
     margin-bottom: 20px;
 }
-.skills .col-right{
+
+.skills .col-right {
     position: relative;
     width: 45%;
 }
-.skills .col-right .bar{
+
+.skills .col-right .bar {
     margin-bottom: 15px;
     padding: 5px;
 }
-.skills .col-right .bar .info{
+
+.skills .col-right .bar .info {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 5px;
 }
-.skills .info span{
+
+.skills .info span {
     font-size: 18px;
     font-weight: 500;
 }
-.skills .line{
+
+.skills .line {
     position: relative;
     width: 100%;
     height: 10px;
@@ -464,7 +530,8 @@ img{
     background-color: rgba(243, 243, 243, 0.326);
     border-radius: 125px;
 }
-.skills .line::before{
+
+.skills .line::before {
     content: '';
     position: absolute;
     height: 100%;
@@ -472,41 +539,47 @@ img{
     left: 0;
     border-radius: 125px;
 }
-.skills .html::before{
+
+.skills .html::before {
     width: 65%;
     background: green;
 
 }
 
 
-.skills .css::before{
+.skills .css::before {
     width: 55%;
     background-color: greenyellow;
 }
-.skills .javascript::before{
+
+.skills .javascript::before {
     width: 40%;
     background-color: yellow;
 }
-.skills .react::before{
+
+.skills .react::before {
     width: 25%;
     background-color: red;
 }
-.services{
+
+.services {
     background: white;
 }
-.services .content{
+
+.services .content {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-wrap: nowrap;
     margin-top: 20px;
-    
+
 }
-.title p{
+
+.title p {
     width: 80%;
     font-size: 20px;
 }
-.services .content .card{
+
+.services .content .card {
     background: #fff;
     width: 300px;
     margin: 10px;
@@ -517,55 +590,65 @@ img{
     border-radius: 10px;
     box-shadow: 0 5px 25px rgba(1 1 1 /15%);
     transition: 1s ease;
-    }
-.services .content .card:hover{
+}
+
+.services .content .card:hover {
     box-shadow: 25px 25px 25px rgba(13, 74, 205, 0.664);
     color: white;
     background-color: black;
     transform: translateY(-30px);
 }
-.services .card .service-icon{
+
+.services .card .service-icon {
     color: crimson;
     font-size: 120px;
     text-align: center;
-    transition:  1s ease;
+    transition: 1s ease;
 }
-.services .card .service-icon:hover{
+
+.services .card .service-icon:hover {
     transform: translateY(-30px);
 }
-.services .card .info{
+
+.services .card .info {
     text-align: center;
 }
-.services .card .info h3{
+
+.services .card .info h3 {
     color: crimson;
     font-size: 20px;
     font-weight: 700;
     margin: 10px;
 }
-.work{
+
+.work {
     background-color: black;
-    
+
 }
-.work  .content{
+
+.work .content {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
     margin-top: 20px;
-    
+
 }
-.work  .content .card{
+
+.work .content .card {
     width: 340px;
     margin: 15px;
 }
-.work  .content .card-img{
+
+.work .content .card-img {
     position: relative;
     width: 100%;
     height: 260px;
     border-radius: 10px;
     overflow: hidden;
 }
-.work  .content .card-img img{
+
+.work .content .card-img img {
     position: absolute;
     top: 0;
     left: 0;
@@ -575,25 +658,29 @@ img{
     border-radius: 10px;
     transition: 2s ease;
 }
-.work  .content .card-img img:hover{
+
+.work .content .card-img img:hover {
     transform: scale(1.3);
 }
-.contact{
+
+.contact {
     background-color: rgba(146, 146, 146, 0.274);
 }
-.contact input{
+
+.contact input {
     width: 280px;
     height: 30px;
-    padding: 10px ;
+    padding: 10px;
     border-radius: 5px;
 }
-.contact .text{
+
+.contact .text {
     border-radius: 5px;
     padding: 5px;
 }
 
 
-.contact .content .card{
+.contact .content .card {
     background: #fff;
     width: 300px;
     margin: 10px;
@@ -607,55 +694,65 @@ img{
 
 
 }
-.contact .content .card:hover{
+
+.contact .content .card:hover {
     background-color: black;
     box-shadow: 25px 25px 25px rgba(13, 74, 205, 0.664);
     color: white;
     transform: translateY(-30px);
 }
 
-.contact .card .service-icon{
+.contact .card .service-icon {
     color: rgb(230, 0, 255);
     font-size: 120px;
     text-align: center;
     transition: 1s ease;
 }
-.contact .card .service-icon:hover{
+
+.contact .card .service-icon:hover {
     transform: translateY(-30px);
 }
-.contact .card .info{
+
+.contact .card .info {
     text-align: center;
 }
-.contact .card .info h3{
+
+.contact .card .info h3 {
     color: rgb(226, 43, 186);
     font-size: 20px;
     font-weight: 700;
     margin: 10px;
-}.contact .card .info p{
+}
+
+.contact .card .info p {
     width: 80%;
     color: white;
 }
-.contact .content{
+
+.contact .content {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
     margin-top: 20px;
-    
+
 }
-.contact .content .row{
+
+.contact .content .row {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
-    
+
 }
-.contact .mes{
+
+.contact .mes {
     position: relative;
     width: 100%;
     margin-bottom: 20px;
 }
-.contact .mes input{
+
+.contact .mes input {
     color: #111;
     width: 100%;
     padding: 10px;
@@ -664,11 +761,12 @@ img{
     outline: none;
 }
 
-.title p{
+.title p {
     width: 80%;
     color: rgb(7, 7, 7);
 }
- .btn2{
+
+.btn2 {
     color: white;
     background-color: crimson;
     font-size: 17px;
@@ -678,25 +776,29 @@ img{
     text-decoration: none;
     border-radius: 5px;
     letter-spacing: 1px;
-    margin: 30px ;
+    margin: 30px;
     transition: .5s ease;
 }
-.btn2:hover{
-    background-color:rgb(26, 141, 213);
+
+.btn2:hover {
+    background-color: rgb(26, 141, 213);
     color: rgb(0, 204, 255);
     padding: 10px 25px;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
     width: 8px;
     background-color: black;
 
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
     background-color: rgb(255, 255, 255);
     height: min-content;
     border-radius: 20px;
 }
-.contact-form{
+
+.contact-form {
     background-color: #fff;
     max-width: 600px;
     margin-top: 50px;
@@ -704,14 +806,16 @@ img{
     border-radius: 10px;
     width: 100%;
 }
-.contact-form h3{
+
+.contact-form h3 {
     color: crimson;
     font-style: 25px;
     font-weight: 600;
     text-align: center;
     margin-bottom: 40px;
 }
-.mes2{
+
+.mes2 {
     color: white;
     background-color: crimson;
     font-size: 17px;
@@ -722,16 +826,19 @@ img{
     transition: .7s ease;
     width: 100%;
 }
-.mes2:hover{
-    background-color:rgb(26, 141, 213);
+
+.mes2:hover {
+    background-color: rgb(26, 141, 213);
     color: rgb(0, 204, 255);
     padding: 10px 25px;
 }
-.mes4{
+
+.mes4 {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .con {
     display: flex;
     justify-content: center;
@@ -741,53 +848,59 @@ img{
     width: 100%;
     height: 100px;
 }
+
 .con .har {
     margin-top: 10px;
     align-items: center;
 }
-.con .har .btn{
+
+.con .har .btn {
     margin-left: -500px;
     margin-bottom: -50px;
 }
-.con .har span{
+
+.con .har span {
     font-size: 25px;
     color: white;
     transition: 1s ease;
 }
-.con .har span:hover{
+
+.con .har span:hover {
     color: rgb(0, 149, 255);
 }
-.con .har p{
+
+.con .har p {
     color: white;
     transition: 1s ease;
 }
-.con .har p:hover{
+
+.con .har p:hover {
     color: rgb(0, 149, 255);
 }
 
 
-.btn { 
+.btn {
     color: #ff0000;
-  }
-  
-  .btn::before { 
-    
-    background-color: #ff1616;
-    
+}
 
-  }
-  
-  .btn:hover { 
+.btn::before {
+
+    background-color: #ff1616;
+
+
+}
+
+.btn:hover {
     color: white;
     box-shadow: 0 0 35px red;
-  }
-  
-  .btn:hover::before { 
+}
+
+.btn:hover::before {
     transform: scaleY(1);
 
-  }
+}
 
-  .btn {
+.btn {
     background-color: transparent;
     border: 3px solid;
     border-radius: .5rem;
@@ -803,10 +916,10 @@ img{
     cursor: pointer;
     z-index: 10;
     box-shadow: 0 0 35px red;
-    
-  }
-  
-  .btn::before { 
+
+}
+
+.btn::before {
     content: "";
     height: 100%;
     left: 0;
@@ -817,4 +930,4 @@ img{
     width: 100%;
     z-index: -1;
     border-radius: 5px;
-  }
+}
